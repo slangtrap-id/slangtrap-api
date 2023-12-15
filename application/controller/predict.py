@@ -7,10 +7,9 @@ from flask import jsonify
 def predict_controller(user):
     autocrop(user)
     word_cnn = predict_model(user)
-    word_cnn[0] = word_cnn[0].upper()
+    # word_cnn[0] = word_cnn[0].upper()
     response_data = {"word_cnn": autocorrect_text(word_cnn)}
     return jsonify(response_data)
-
 
 
 
